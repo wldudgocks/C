@@ -1,4 +1,5 @@
 // while 문을 이용한 합계 프로그램
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
 int main(void)
