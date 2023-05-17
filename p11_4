@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    double h,d,tree_h,deg,r;
+
+    printf("나무와의 길이(단위는 미터):");
+    scanf("%lf",&d);
+
+    printf("측정자의 키(단위는 미터):");
+    scanf("%lf",&h);
+
+    printf("각도(단위는 도):");
+    scanf("%lf",&deg);
+
+    r = deg*(3.141592/180.0);//각도를 라디안으로 변환
+
+    tree_h = tan(r)*d+h;//tan 성질 이용해서 나무의 길이 구하기
+    printf("나무의 높이(단위는 미터):%lf\n",tree_h);
+
+    return 0;
+}
