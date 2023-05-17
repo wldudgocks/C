@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <time.h>
+
+ void disp_car(int car, int distance)//자동차 경주 함수
+ {
+    int i;
+    printf("CAR #%d:", car);
+    for(i =0; i<distance/10; i++)//거리 측정
+    {
+        printf("*");
+    }
+    printf("\n");
+ }
+
+ int main()
+ {
+    int i;
+    int car1=0, car2=0;//경주하기 위해 1번 2번 차로 나눔
+
+    srand((unsigned)time(NULL));
+
+    for(i = 0; i<6; i++)//6번 반복하기
+    {
+        car1 += rand()%100;//0~99까지로 제한함
+        car2 += rand()%100;
+        disp_car(1, car1);
+        disp_car(2, car2);
+        printf("----------------\n");
+        _getch();
+    }
+    return 0;
+ }
