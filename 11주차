@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int coin_t(void);//던지기 게임 함수 지정
+
+int coin_t()
+{
+    int front = rand()%2;
+    return front;
+}
+
+int main(void)
+{
+    int t;//던지는 횟수
+    int front = 0;//앞면(횟수를 표현해야 하기 때문에 0으로 선언)
+    int back = 0;//뒷면
+    srand((unsigned)time(NULL));//난수의 중복을 막기위해 선언해줌
+
+    for(t = 0; t<100; t++)//100번 던지기
+    {
+        if(coin_t() == 1)
+        {
+            front++;
+        }
+        else
+        {
+            back++;
+        }
+    }
+    printf("동전의 앞면:%d\n", front);
+    printf("동전의 뒷면:%d\n", back);
+
+}
+
